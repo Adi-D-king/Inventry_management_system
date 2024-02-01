@@ -1,7 +1,7 @@
 import MySQLdb as db
-print('***************************************')
-print('Wellcome to inventeri managment system.')
-print('***************************************')
+print('*************************************** ',end="")
+print('Wellcome to inventeri managment system.',end="")
+print(' ***************************************')
 
 #connecting database
 conn = db.connect(host = 'localhost', database= 'testing', user = 'root', password = 'Adity@4410')
@@ -13,7 +13,7 @@ print('''Plese enter choice.
 1. Enter new Item.
 2. View Inventeri 
 0. Exit.''')
-choice = int(input('-->'))  #user input
+choice = int(input('Enter choice :>'))  #user input
 
 if choice == 1:
     Sir_no = int(input("Sr_no:"))
