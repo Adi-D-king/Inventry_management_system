@@ -18,9 +18,9 @@ choice = int(input('Enter choice :>'))  #user input
 
 if choice == 1:
     Sir_no = int(input("Sr_no:"))
-    Product_name = "Name"
-    Type = "Unknown"
-    Price = 10.5
+    Product_name = input("Enter name Product:")
+    Type = input("Enter type of product:")
+    Price = float(input("Enter prince:"))
     sql = "insert into inventry (Sir_no, Product_name, Type, Price) value ({},'{}','{}',{});".format(Sir_no,Product_name,Type,Price)
     cursor.execute(sql)
     print("data entered")
