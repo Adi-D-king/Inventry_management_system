@@ -18,8 +18,8 @@ print('''Plese enter choice.
 choice = int(input('Enter choice :>'))  #user input
 
 if choice == 1:
-    itme_list = ['Kurkure', 'itemone','Name']
-    quantity = [2,3,4]
+    itme_list = []
+    quantity = []
     O ='y'
     while O == 'y':
         itme_list.append(str(input("Enter product name:")))
