@@ -21,10 +21,10 @@ if choice == 1:
     itme_list = ['Kurkure', 'itemone','Name']
     quantity = [2,3,4]
     O ='y'
-    # while O == 'y':
-        # itme_list.append(str(input("Enter product name:")))
-        # quantity.append(int(input("Enter quantitya:")))
-        # O = input("y= next_item/n= exit :")
+    while O == 'y':
+        itme_list.append(str(input("Enter product name:")))
+        quantity.append(int(input("Enter quantitya:")))
+        O = input("y= next_item/n= exit :")
     n = len(itme_list)
     sum = 0
     for i in range(0,n):
