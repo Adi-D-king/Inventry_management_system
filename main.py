@@ -18,18 +18,23 @@ print('''Plese enter choice.
 choice = int(input('Enter choice :>'))  #user input
 
 if choice == 1:
-    itme_list = []
-    quantity = []
+    itme_list = ['Kurkure', 'itemone','Name']
+    quantity = [2,3,4]
     O ='y'
-    while O == 'y':
-        itme_list.append(str(input("Enter product name:")))
-        quantity.append(int(input("Enter quantitya:")))
-        O = input("y= next_item/n= exit :")
-    for i in itme_list:
-        sql = "select (Price) from inventry where {};".format(i)
+    # while O == 'y':
+        # itme_list.append(str(input("Enter product name:")))
+        # quantity.append(int(input("Enter quantitya:")))
+        # O = input("y= next_item/n= exit :")
+    n = len(itme_list)
+    sum = 0
+    for i in range(0,n):
+        print(i)
+        sql = "select Price from inventry where Product_name = '{}';".format(itme_list[i])
         cursor.execute(sql)
-        print(cursor.fetchone()*quantity[0])
-
+        a = cursor.fetchone()
+        sum += a[0]*quantity[i]
+        print(itme_list[i],' = ',a[0]*quantity[i])
+    print("Total bill is = ",sum)
 elif choice == 2:
     Sir_no = int(input("Sr_no:"))
     Product_name = input("Enter name Product:")

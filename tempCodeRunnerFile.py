@@ -1,0 +1,1 @@
+quantity.append(int(input("Enter quantitya:")))
