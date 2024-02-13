@@ -2,13 +2,13 @@ import functions as ff
 
 def Mainmenu():
     print('''Options:-
-      1.New_itme
+      1.New_item
       2.List inventry
       3.Low in stock
       4.Out of stock''')
     choice = int(input("Enter Choice :"))
     if choice == 1:
-        ff.new_itme()
+        ff.new_item()
         Mainmenu()
     elif choice==2:
         ff.inventry()

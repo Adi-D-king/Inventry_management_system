@@ -6,8 +6,8 @@ print("Conection sucessfull")
 print("using testing database !!")
 print(" "*5,"_"*10,"Wellcome to inventry managment system","_"*10)
 
-# 1. function for inserting new itme to inventry
-def new_itme():
+# 1. function for inserting new item to inventry
+def new_item():
     Sir_no = int(input("Sr_no:"))
     Product_name = input("Enter name Product:")
     Type = input("Enter type of product:")
@@ -16,7 +16,7 @@ def new_itme():
     cursor.execute(sql)
     conn.commit()
     print("data entered")
-# 2. function to show itmes in invetry
+# 2. function to show items in invetry
 def inventry():
     cursor.execute("select * from inventry")
     #row = cursor.fetchone() #get onr row
