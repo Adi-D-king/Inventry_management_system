@@ -3,7 +3,8 @@ conn =db.connect(user='root',password='Adity@4410',host='localhost',database='te
 cursor = conn.cursor() # creating cursor
 cursor.execute("use testing;")
 print("Conection sucessfull")
-print("using testing!")
+print("using testing database !!")
+print(" "*5,"_"*10,"Wellcome to inventry managment system","_"*10)
 
 # 1. function for inserting new itme to inventry
 def new_itme():

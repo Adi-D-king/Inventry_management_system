@@ -1,7 +1,6 @@
 import functions as ff
 
 def Mainmenu():
-    print(" "*5,"_"*10,"Wellcome to inventry managment system","_"*10)
     print('''Options:-
       1.New_itme
       2.List inventry
