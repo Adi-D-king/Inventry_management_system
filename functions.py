@@ -19,7 +19,7 @@ def new_item():
 # 2. function to show items in invetry
 def inventry():
     cursor.execute("select * from inventry")
-    #row = cursor.fetchone() #get onr row
+    #row = cursor.fetchone() #get one row
     rows = cursor.fetchall() #get all rows
     for i in rows:
         print(i)
