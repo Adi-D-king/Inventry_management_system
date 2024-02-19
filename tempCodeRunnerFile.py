@@ -1,4 +1,2 @@
-self.inventry = customtkinter.CTkScrollableFrame(self.tabWindow.tab("Inventry"),width=1000,height=750,fg_color="black")
-        # self.inventry.grid()
-        # self.inventry_q()
-        # self.a=0
+self.Quantity = customtkinter.CTkLabel(self.out_of_stock,text=" _____ Quantity _____ |")
+        self.Quantity.grid(row=0,column=4)
