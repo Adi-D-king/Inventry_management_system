@@ -18,13 +18,13 @@ def inventry():
 
 # 2. function to show low in stocks items in inventry
 def low_in_stock():
-    cursor.execute("select Price from inventry where Stock <= 5 ;")
+    cursor.execute("select * from inventry where Quantity < 100 ;")
     l_rows = cursor.fetchall()
     return l_rows
 
 # 3. function to show item which are out of stock
 def out_of_stock():
-    cursor.execute("select Price from inventry where Stock = 0 ;")
+    cursor.execute("select * from inventry where Quantity = 0 ;")
     Orows = cursor.fetchall()
     return Orows
 

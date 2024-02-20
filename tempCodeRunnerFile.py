@@ -1,2 +1,2 @@
-self.Quantity = customtkinter.CTkLabel(self.out_of_stock,text=" _____ Quantity _____ |")
-        self.Quantity.grid(row=0,column=4)
+self.Il_Type = customtkinter.CTkLabel(self.add_frame_1,text="Enter type:")
+        self.Il_Type.grid(row=0,column=0,padx=(5,2),pady=(5,5))
