@@ -46,6 +46,6 @@ def new_item(sirno,prodno,typee,pricee,quantityy):
 def delet_itme(Sir_no):
     # Sir__no = int(input("Enter serale number:"))
     cursor.execute("select * from inventry;")
-    cursor.execute("delete from inventry where Sir_no = {}".format(Sir_no))
+    cursor.execute("delete from inventry where Sir_no = {} and ".format(Sir_no))
     print("itme deleted")
     # conn.commit()
