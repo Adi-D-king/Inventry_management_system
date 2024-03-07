@@ -30,15 +30,16 @@ def out_of_stock():
 
 
 # 4. function for inserting new item to inventry
-def new_item():
-    Sir_no = int(input("Sr_no:"))
-    Product_name = input("Enter name Product:")
-    Type = input("Enter type of product:")
-    Price = float(input("Enter prince:"))
-    sql = "insert into inventry (Sir_no, Product_name, Type, Price) value ({},'{}','{}',{});".format(Sir_no,Product_name,Type,Price)
+def new_item(sirno,prodno,typee,pricee,quantityy):
+    Sir_no = sirno
+    Product_name = prodno
+    Type = typee
+    Price = pricee
+    Quantity = quantityy
+    sql = "insert into inventry (Sir_no, Product_name, Type, Price, Quantity) value ({},'{}','{}',{},{});".format(Sir_no,Product_name,Type,Price,Quantity)
     cursor.execute(sql)
     conn.commit()
-    return "data entered"
+    return True
 
 
 # 5. function to delet an itme from inventry 

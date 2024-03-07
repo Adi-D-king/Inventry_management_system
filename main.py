@@ -164,7 +164,7 @@ class App(customtkinter.CTk):
         self.Input_Quantity.grid(row=0,column=3,padx=(5,5))
         self.add_frame_2 = customtkinter.CTkFrame(self.add_frame,fg_color="white",)
         self.add_frame_2.grid(row=2)
-        self.Add_button = customtkinter.CTkButton(self.add_frame_2,text="Add",width=80)
+        self.Add_button = customtkinter.CTkButton(self.add_frame_2,text="Add",width=80,command=self.addFunction)
         self.Add_button.grid(row=0,column=0,padx=(10,100),pady=(5,5))# remaining to creat function
                                       #Delet
         self.delet_frame = customtkinter.CTkFrame(self.Add_delet,width=990,height=375,fg_color="pink")
@@ -172,10 +172,11 @@ class App(customtkinter.CTk):
         #----------------------------------------------------------------------------
         self.tabWindow.set("Add/Delet")     #########################################################################################################################
         
-    def inventry_q(self):
+    def inventry_q(self): #------------for refresh option
+        self.rows = ff.inventry()
         self.inventry = customtkinter.CTkScrollableFrame(self.tabWindow.tab("Inventry"),width=1000,height=750,fg_color="white")
         self.inventry.grid(row=0,column=0)
-                                    # Sir No.. column
+                               # Sir No.. column
         self.Sir_no= customtkinter.CTkLabel(self.inventry,text="| _____ Sir No.. _____ |",text_color="black")
         self.Sir_no.grid(row=0,column=0)
         for i in self.rows:
@@ -204,11 +205,22 @@ class App(customtkinter.CTk):
         self.Quantity.grid(row=0,column=4)
         
 
-    def refresh_f(self):
+    def refresh_f(self): # for freresh main function
         self.protocol(self.inventry1.destroy())
         print("end")
         if self.a==1:
             self.inventry_q()
             self.a=0
+    def addFunction(self): # function to add into inventry
+        self.sirno = self.Input_Sir_no_.get()
+        self.prodno = self.Input_Name.get()
+        self.typee = self.Input_Type.get()
+        self.pricee = self.Input_Price.get()
+        self.quantityy = self.Input_Quantity.get()
+        self.confur = ff.new_item(self.sirno,self.prodno,self.typee,self.pricee,self.quantityy)
+        if self.confur==True :
+            print("data entered")
+        else :
+            print("False")
 app=App()
 app.mainloop()
