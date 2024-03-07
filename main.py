@@ -161,6 +161,6 @@ class App(customtkinter.CTk):
             print("False")
 
     # def deleteFunction(self):
-        
+    #     self.sir_no = 
 app=App()
 app.mainloop()
