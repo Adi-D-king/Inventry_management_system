@@ -27,37 +27,38 @@ class App(customtkinter.CTk):
         #----------------------Inventry tab------------------------------
         self.inventry1 = customtkinter.CTkScrollableFrame(self.tabWindow.tab("Inventry"),width=1000,height=750,fg_color="black")
         self.inventry1.grid()
-        self.rows = ff.inventry()
-                                        # Sir No.. column
-        self.Sir_no= customtkinter.CTkLabel(self.inventry1,text="| _____ Sir No.. _____ |")
-        self.Sir_no.grid(row=0,column=0)
-        for i in self.rows:
-            self.sir_no = customtkinter.CTkLabel(self.inventry1,text=i[0])
-            self.sir_no.grid(row=i[0],column=0)
-                                        # Name column
-        self.Name = customtkinter.CTkLabel(self.inventry1,text=" {} Name {} |".format("_"*20,"_"*20))
-        self.Name.grid(row=0,column=1)
-        for i in self.rows:
-            self.name = customtkinter.CTkLabel(self.inventry1,text=i[1])
-            self.name.grid(row=i[0],column=1)
-                                        # Type column
-        self.Type = customtkinter.CTkLabel(self.inventry1,text=" {} Type {} |".format("_"*20,"_"*20))
-        self.Type.grid(row=0,column=2)
-        for i in self.rows:
-            self.type = customtkinter.CTkLabel(self.inventry1,text=i[2])
-            self.type.grid(row=i[0],column=2)
-                                        # Price
-        self.Price= customtkinter.CTkLabel(self.inventry1,text=" _____ Price _____ |")
-        self.Price.grid(row=0,column=3)
-        for i in self.rows:
-            self.price = customtkinter.CTkLabel(self.inventry1,text=i[3])
-            self.price.grid(row=i[0],column=3)
-                                    # Quantity 
-        self.Quantity = customtkinter.CTkLabel(self.inventry1,text=" _______ Quantity _______ |")
-        self.Quantity.grid(row=0,column=4)
-        for i in self.rows:
-            self.quantity = customtkinter.CTkLabel(self.inventry1,text=i[4])
-            self.quantity.grid(row=i[0],column=4)
+        self.inventry_q("Inventry")
+        # self.rows = ff.inventry()
+        #                                 # Sir No.. column
+        # self.Sir_no= customtkinter.CTkLabel(self.inventry1,text="| _____ Sir No.. _____ |")
+        # self.Sir_no.grid(row=0,column=0)
+        # for i in self.rows:
+        #     self.sir_no = customtkinter.CTkLabel(self.inventry1,text=i[0])
+        #     self.sir_no.grid(row=i[0],column=0)
+        #                                 # Name column
+        # self.Name = customtkinter.CTkLabel(self.inventry1,text=" {} Name {} |".format("_"*20,"_"*20))
+        # self.Name.grid(row=0,column=1)
+        # for i in self.rows:
+        #     self.name = customtkinter.CTkLabel(self.inventry1,text=i[1])
+        #     self.name.grid(row=i[0],column=1)
+        #                                 # Type column
+        # self.Type = customtkinter.CTkLabel(self.inventry1,text=" {} Type {} |".format("_"*20,"_"*20))
+        # self.Type.grid(row=0,column=2)
+        # for i in self.rows:
+        #     self.type = customtkinter.CTkLabel(self.inventry1,text=i[2])
+        #     self.type.grid(row=i[0],column=2)
+        #                                 # Price
+        # self.Price= customtkinter.CTkLabel(self.inventry1,text=" _____ Price _____ |")
+        # self.Price.grid(row=0,column=3)
+        # for i in self.rows:
+        #     self.price = customtkinter.CTkLabel(self.inventry1,text=i[3])
+        #     self.price.grid(row=i[0],column=3)
+        #                             # Quantity 
+        # self.Quantity = customtkinter.CTkLabel(self.inventry1,text=" _______ Quantity _______ |")
+        # self.Quantity.grid(row=0,column=4)
+        # for i in self.rows:
+        #     self.quantity = customtkinter.CTkLabel(self.inventry1,text=i[4])
+        #     self.quantity.grid(row=i[0],column=4)
         self.a=1
         #----------------------------------------------------------------
         #------------------------Low in stock tab---------------------------
@@ -172,36 +173,36 @@ class App(customtkinter.CTk):
         #----------------------------------------------------------------------------
         self.tabWindow.set("Add/Delet")     #########################################################################################################################
         
-    def inventry_q(self): #------------for refresh option
+    def inventry_q(self,inventry): #------------for refresh option
         self.rows = ff.inventry()
-        self.inventry = customtkinter.CTkScrollableFrame(self.tabWindow.tab("Inventry"),width=1000,height=750,fg_color="white")
+        self.inventry = customtkinter.CTkScrollableFrame(self.tabWindow.tab(inventry),width=1000,height=750,bg_color="black")
         self.inventry.grid(row=0,column=0)
                                # Sir No.. column
-        self.Sir_no= customtkinter.CTkLabel(self.inventry,text="| _____ Sir No.. _____ |",text_color="black")
+        self.Sir_no= customtkinter.CTkLabel(self.inventry,text="| _____ Sir No.. _____ |",text_color="white")
         self.Sir_no.grid(row=0,column=0)
         for i in self.rows:
-            self.sir_no = customtkinter.CTkLabel(self.inventry,text=i[0],text_color="black")
+            self.sir_no = customtkinter.CTkLabel(self.inventry,text=i[0],text_color="white")
             self.sir_no.grid(row=i[0],column=0)
                                         # Name column
-        self.Name = customtkinter.CTkLabel(self.inventry,text=" {} Name {} |".format("_"*20,"_"*20),text_color="black")
+        self.Name = customtkinter.CTkLabel(self.inventry,text=" {} Name {} |".format("_"*20,"_"*20),text_color="white")
         self.Name.grid(row=0,column=1)
         for i in self.rows:
-            self.name = customtkinter.CTkLabel(self.inventry,text=i[1],text_color="black")
+            self.name = customtkinter.CTkLabel(self.inventry,text=i[1],text_color="white")
             self.name.grid(row=i[0],column=1)
                                         # Type column
-        self.Type = customtkinter.CTkLabel(self.inventry,text=" {} Type {} |".format("_"*20,"_"*20),text_color="black")
+        self.Type = customtkinter.CTkLabel(self.inventry,text=" {} Type {} |".format("_"*20,"_"*20),text_color="white")
         self.Type.grid(row=0,column=2)
         for i in self.rows:
-            self.type = customtkinter.CTkLabel(self.inventry,text=i[2],text_color="black")
+            self.type = customtkinter.CTkLabel(self.inventry,text=i[2],text_color="white")
             self.type.grid(row=i[0],column=2)
                                         # Price
-        self.Price= customtkinter.CTkLabel(self.inventry,text=" _____ Price _____ |",text_color="black")
+        self.Price= customtkinter.CTkLabel(self.inventry,text=" _____ Price _____ |",text_color="white")
         self.Price.grid(row=0,column=3)
         for i in self.rows:
-            self.price = customtkinter.CTkLabel(self.inventry,text=i[3],text_color="black")
+            self.price = customtkinter.CTkLabel(self.inventry,text=i[3],text_color="white")
             self.price.grid(row=i[0],column=3)
                                     # Quantity 
-        self.Quantity = customtkinter.CTkLabel(self.inventry,text=" _____ Quantity _____ |",text_color="black")
+        self.Quantity = customtkinter.CTkLabel(self.inventry,text=" _____ Quantity _____ |",text_color="white")
         self.Quantity.grid(row=0,column=4)
         
 
@@ -209,8 +210,7 @@ class App(customtkinter.CTk):
         self.protocol(self.inventry1.destroy())
         print("end")
         if self.a==1:
-            self.inventry_q()
-            self.a=0
+            self.inventry_q("Inventry")
     def addFunction(self): # function to add into inventry!
         self.sirno = self.Input_Sir_no_.get()
         self.prodno = self.Input_Name.get()
