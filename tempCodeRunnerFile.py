@@ -1,2 +1,2 @@
-self.Il_Type = customtkinter.CTkLabel(self.add_frame_1,text="Enter type:")
-        self.Il_Type.grid(row=0,column=0,padx=(5,2),pady=(5,5))
+        # self.inventry1 = customtkinter.CTkScrollableFrame(self.tabWindow.tab("Inventry"),width=1000,height=750,fg_color="black")
+        # self.inventry1.grid()
