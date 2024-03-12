@@ -35,13 +35,25 @@ class App(customtkinter.CTk):
         self.b_Quantity_lable.grid(row=0,column=2,padx=(10,10),pady=(10,10))
         self.b_Quantity_Entry = customtkinter.CTkEntry(self.b_fram,width=200)
         self.b_Quantity_Entry.grid(row=0,column=3,padx=(0,10),pady=(10,10))
-        self.b_button_next = customtkinter.CTkButton(self.b_fram,text="Next")
+        self.b_button_next = customtkinter.CTkButton(self.b_fram,text="Next",command=self.next)
         self.b_button_next.grid(row=0,column=4,padx=(0,10),pady=(10,10))
         self.b_button_gb = customtkinter.CTkButton(self.b_fram,text="Total")
         self.b_button_gb.grid(row=0,column=5,padx=(0,10),pady=(10,10))
-        self.b_fram1 = customtkinter.CTkFrame(self.tabWindow.tab("Bill"),width=950,height=750,fg_color="black")
+        self.b_fram1 = customtkinter.CTkScrollableFrame(self.tabWindow.tab("Bill"),width=950,height=750)
         self.b_fram1.grid(row=1,column=0)
         self.number_of_itmes = 0
+        self.list_Name = self.b_Name_Entry.get()
+        self.list_Quantity = self.b_Quantity_Entry.get()
+        self.temp_no = customtkinter.CTkLabel(self.b_fram1,text="|______ NO.______ |",text_color="white")  # for genarating bill itme number
+        self.temp_no.grid(row=0,column=0,padx=(10,0))
+        self.temp_name = customtkinter.CTkLabel(self.b_fram1,text="|_________________NAME_______________|",text_color="white")  # for genarating bill itme name
+        self.temp_name.grid(row=0,column=1,padx=(10,0))
+        self.temp_Quantity = customtkinter.CTkLabel(self.b_fram1,text="|_____QUANTITY______|",text_color="white")  # for genarating bill itme Quantity
+        self.temp_Quantity.grid(row=0,column=2,padx=(10,0))
+        self.temp_price = customtkinter.CTkLabel(self.b_fram1,text="|______PRICE_______|",text_color="white",height=30)  # for genarating bill itme Price
+        self.temp_price.grid(row=0,column=3,padx=(10,0))
+        self.temp_total = customtkinter.CTkLabel(self.b_fram1,text="|_______TOTAL_______|",text_color="white",height=30)  # for genarating bill itme Total
+        self.temp_total.grid(row=0,column=4,padx=(10,10))
         #----------------------Inventry tab------------------------------
         self.inventry1 = customtkinter.CTkScrollableFrame(self.tabWindow.tab("Inventry"),width=1000,height=750)
         self.inventry1.grid()
@@ -230,9 +242,10 @@ class App(customtkinter.CTk):
     #     self.sir_no = self.d_entry_sir_no.get()
             
     def next(self):
-        self.list_Name = self.b_Name_Entry.get()
-        self.list_Quantity = self.b_Quantity_Entry.get()
+        self.number_of_itmes+=1
+        print(self.number_of_itmes)
         
+
 
 
 app=App()
