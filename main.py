@@ -39,8 +39,9 @@ class App(customtkinter.CTk):
         self.b_button_next.grid(row=0,column=4,padx=(0,10),pady=(10,10))
         self.b_button_gb = customtkinter.CTkButton(self.b_fram,text="Total")
         self.b_button_gb.grid(row=0,column=5,padx=(0,10),pady=(10,10))
-        self.list_Name=[]
-        self.list_Quantity = []
+        self.b_fram1 = customtkinter.CTkFrame(self.tabWindow.tab("Bill"),width=950,height=750,fg_color="black")
+        self.b_fram1.grid(row=1,column=0)
+        self.number_of_itmes = 0
         #----------------------Inventry tab------------------------------
         self.inventry1 = customtkinter.CTkScrollableFrame(self.tabWindow.tab("Inventry"),width=1000,height=750)
         self.inventry1.grid()
@@ -229,9 +230,10 @@ class App(customtkinter.CTk):
     #     self.sir_no = self.d_entry_sir_no.get()
             
     def next(self):
-        self.list_Name.append(self.b_Name_Entry.get())
-        self.list_Quantity.append(self.b_Quantity_Entry.get())
+        self.list_Name = self.b_Name_Entry.get()
+        self.list_Quantity = self.b_Quantity_Entry.get()
         
+
 
 app=App()
 app.mainloop()
