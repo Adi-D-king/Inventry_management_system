@@ -42,8 +42,6 @@ class App(customtkinter.CTk):
         self.b_fram1 = customtkinter.CTkScrollableFrame(self.tabWindow.tab("Bill"),width=950,height=750)
         self.b_fram1.grid(row=1,column=0)
         self.number_of_itmes = 0
-        self.list_Name = self.b_Name_Entry.get()
-        self.list_Quantity = self.b_Quantity_Entry.get()
         self.temp_no = customtkinter.CTkLabel(self.b_fram1,text="|______ NO.______ |",text_color="white")  # for genarating bill itme number
         self.temp_no.grid(row=0,column=0,padx=(10,0))
         self.temp_name = customtkinter.CTkLabel(self.b_fram1,text="|_________________NAME_______________|",text_color="white")  # for genarating bill itme name
@@ -243,9 +241,20 @@ class App(customtkinter.CTk):
             
     def next(self):
         self.number_of_itmes+=1
-        print(self.number_of_itmes)
-        
-
+        self.list_Name = self.b_Name_Entry.get()
+        # if self.b_Quantity_Entry.get() == True:
+        self.list_Quantity = int(self.b_Quantity_Entry.get())
+        self.lis_number = customtkinter.CTkLabel(self.b_fram1,text=f"{self.number_of_itmes}")
+        self.lis_number.grid(row=self.number_of_itmes,column=0)
+        self.lis_name = customtkinter.CTkLabel(self.b_fram1,text=f"{self.list_Name}")
+        self.lis_name.grid(row=self.number_of_itmes,column=1)
+        self.lis_q = customtkinter.CTkLabel(self.b_fram1,text=f"{self.list_Quantity}")
+        self.lis_q.grid(row=self.number_of_itmes,column=2)
+        price = ff.billing(self.list_Name)
+        self.lis_p = customtkinter.CTkLabel(self.b_fram1,text=f"{price}")
+        self.lis_p.grid(row=self.number_of_itmes,column=3)
+        self.lis_t = customtkinter.CTkLabel(self.b_fram1,text=f"{price*self.list_Quantity}")
+        self.lis_t.grid(row=self.number_of_itmes,column=4)
 
 
 app=App()

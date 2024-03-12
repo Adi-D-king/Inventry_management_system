@@ -49,3 +49,8 @@ def delet_itme(Sir_no):
     cursor.execute("delete from inventry where Sir_no = {} and ".format(Sir_no))
     print("itme deleted")
     # conn.commit()
+def billing(name):
+    str = "select Price from inventry where Product_name = '{}'".format(name)
+    cursor.execute(str)
+    price = cursor.fetchone()
+    return price[0]
