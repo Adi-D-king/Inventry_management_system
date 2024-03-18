@@ -56,7 +56,7 @@ class App(customtkinter.CTk):
         self.inventry1 = customtkinter.CTkScrollableFrame(self.tabWindow.tab("Inventry"),width=1000,height=750)
         self.inventry1.grid()
         self.inventry_q("Inventry")
-        self.a=1
+        self.a=1                            ########################################################
         #----------------------------------------------------------------
         #------------------------Low in stock tab---------------------------
         self.low_in_stock = customtkinter.CTkScrollableFrame(self.tabWindow.tab("Low"),width=1000,height=750)
@@ -255,7 +255,6 @@ class App(customtkinter.CTk):
         self.lis_p.grid(row=self.number_of_itmes,column=3)
         self.lis_t = customtkinter.CTkLabel(self.b_fram1,text=f"{price*self.list_Quantity}")
         self.lis_t.grid(row=self.number_of_itmes,column=4)
-
-
+        
 app=App()
 app.mainloop()
