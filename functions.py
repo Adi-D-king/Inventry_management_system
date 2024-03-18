@@ -53,4 +53,6 @@ def billing(name):
     str = "select Price from inventry where Product_name = '{}'".format(name)
     cursor.execute(str)
     price = cursor.fetchone()
-    return price[0]
+    return price[0]  # remaning to update inventry
+
+# def grand_total function remaning 
